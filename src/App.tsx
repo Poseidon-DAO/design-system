@@ -1,5 +1,6 @@
-import * as React from "react"
+import * as React from "react";
 import {
+  extendTheme,
   ChakraProvider,
   Box,
   Text,
@@ -7,10 +8,24 @@ import {
   VStack,
   Code,
   Grid,
-  theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+} from "@chakra-ui/react";
+import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import { Logo } from "./Logo";
+
+const colors = {
+  primary: {
+    900: "#4923fc",
+    800: "#153e75",
+    700: "#2a69ac",
+  },
+  secondary: {
+    900: "#f20a70",
+    800: "#f386cd",
+    700: "#a291bf",
+  },
+};
+
+const theme = extendTheme({ colors });
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -35,4 +50,4 @@ export const App = () => (
       </Grid>
     </Box>
   </ChakraProvider>
-)
+);
