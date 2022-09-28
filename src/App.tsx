@@ -1,34 +1,10 @@
-import * as React from "react";
-import {
-  extendTheme,
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-} from "@chakra-ui/react";
+import { Box, Code, Grid, Link, Text, VStack } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 import { Logo } from "./Logo";
-
-const colors = {
-  primary: {
-    900: "#4923fc",
-    800: "#153e75",
-    700: "#2a69ac",
-  },
-  secondary: {
-    900: "#f20a70",
-    800: "#f386cd",
-    700: "#a291bf",
-  },
-};
-
-const theme = extendTheme({ colors });
+import ThemeProvider from "./theme";
 
 export const App = () => (
-  <ChakraProvider theme={theme}>
+  <ThemeProvider>
     <Box textAlign="center" fontSize="xl">
       <Grid minH="100vh" p={3}>
         <ColorModeSwitcher justifySelf="flex-end" />
@@ -49,5 +25,5 @@ export const App = () => (
         </VStack>
       </Grid>
     </Box>
-  </ChakraProvider>
+  </ThemeProvider>
 );
